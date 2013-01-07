@@ -1,0 +1,17 @@
+<% provide(:title, 'upload fighters') %>
+<h1>upload fighters</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @fighter, :html => {:multipart => true} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+       <%= f.label :picture %>	  
+      <%= f.file_field :picture %>
+
+      <%= f.submit "Add Fighter", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

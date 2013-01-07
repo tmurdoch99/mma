@@ -1,0 +1,35 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>UFC 155</h3>
+      <iframe width="560" height="315"  padding="20" src="http://www.youtube.com/embed/iHEkREhhywk" frameborder="10" allowfullscreen></iframe>
+      <h4>How it works</h4>
+	   <p>So you think you know MMA? You think you know who'll beat who? OK, so put it to the test. You pick what fighter will win, in what round and in what fashion. You get points for what you get right and 
+	      your points go against your friends in your own private super leagues. See here for the full set of rules.</p>
+	</div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to MMA Predictor</h1>
+
+    <h2>
+      To start predicting the outcomes and finishes of the next upcoming card, sign up now!
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, 
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+  
+<% end %>

@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fighter to win</th>
+      <th>In round</th>
+      <th>By</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @prediction.each do |prediction| %>
+  <tr>
+  <td><%= pick.fighter_id %></td>
+        <td><%= pick.round_id %></td>
+        <td><%= pick.how_id %></td>
+     </tr>
+  
+   <% end %>
+</tbody>
+</table>
