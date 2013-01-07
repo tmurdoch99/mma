@@ -5,14 +5,19 @@ before_filter :signed_in_user
   
  @prediction = Prediction.new
   end
+def new
 
+ end
 
 def show
     
     @prediction = current_user.predictions(params[:prediction])
   end
   
-  
+  def correct_user
+      @prediction = current_user.predictions.find_by_id(params[:id])
+      redirect_to root_url if @prediction.nil?
+    end
    
  
  def create
@@ -20,10 +25,11 @@ def show
     @prediction = current_user.predictions.build(params[:prediction])
     if @prediction.save
       flash[:success] = "Your Predictions have been saved!"
-      render 'show'
+      redirect_to @prediction
     else
-     
       render 'index'
     end
   end
+  
+  
 end

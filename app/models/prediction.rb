@@ -5,6 +5,7 @@ class Prediction < ActiveRecord::Base
   attr_accessible :round_id
   
   belongs_to :user
+  has_one :fighter
   
   validates :user_id, presence: true
 end
