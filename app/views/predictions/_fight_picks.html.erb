@@ -3,14 +3,14 @@
 <div class="new_fight">
 
 <div class="controls form-inline">
-<h3>Who will win the fight?</h3>
-      <%=  image_tag("1.png", alt: "st-peire", width: "150px") %>
-      <%= f.radio_button(:fighter_id, "1") %>
-      <%= f.label(:fighter_id, "To win") %>
-	  
-	  <%=  image_tag("2.png", alt: "condit", width: "150px") %>
-      <%= f.radio_button(:fighter_id, "2") %>
-      <%= f.label(:fighter_id, "To win") %>
+  <h3>Who will win the fight?</h3>
+  <% fighters = Fighter.where(:fight => 'UFC 1') %>
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id, fighter.id) %>
+    <%= f.label(:fighter_id, "To win") %>
+  <% end %>
 </div>	  
 
 
