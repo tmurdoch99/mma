@@ -9,8 +9,8 @@
   </thead>
   <tbody>
   <% @prediction.each do |prediction| %>
-  <tr>
-  <td><%= prediction.fighter_id  %></td>
+    <tr>
+      <td><%= image_tag prediction.fighter.picture.url, :width => '150px'%></td>
         <td><%= prediction.round_id %></td>
         <td><%= prediction.how_id %></td>
 		<td><%= prediction.points %></td>
