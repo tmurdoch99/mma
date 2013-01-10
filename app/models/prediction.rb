@@ -6,6 +6,6 @@ class Prediction < ActiveRecord::Base
   
   belongs_to :user
   has_one :fighter
-  
+  accepts_nested_attributes_for :fighter
   validates :user_id, presence: true
 end

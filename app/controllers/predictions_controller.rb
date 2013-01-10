@@ -6,7 +6,8 @@ before_filter :signed_in_user
  @prediction = Prediction.new
   end
 def new
-
+@ufc = '155'
+ @prediction = Prediction.where("ufc = '155'").order('points desc')
  end
 
 def show
@@ -22,7 +23,7 @@ def show
  
  def create
     
-    @prediction = current_user.predictions.build(params[:prediction])
+    @prediction = current_user.predictions.build(params [:prediction])
     if @prediction.save
       flash[:success] = "Your Predictions have been saved!"
       redirect_to @prediction

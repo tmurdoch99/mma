@@ -4,7 +4,7 @@ SampleApp::Application.routes.draw do
   
 
   
-
+resources :leaderboard
   resources :fighters
 resources :predictions
   
@@ -24,7 +24,7 @@ resources :predictions
   match '/signout', to: 'sessions#destroy', via: :delete
   
   
- 
+  match '/leaderboard', to: 'leaderboard#show'
   match '/fighters', to: 'fighters#new'  
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

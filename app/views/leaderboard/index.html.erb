@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>UFC</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody> 
+  <% @leader.each do |leader| %>
+    <tr>
+      <td><%= leader.user_id %></td>
+        <td><%= leader.ufc %></td>
+		<td><%= leader.points %></td>
+     </tr>
+  
+   <% end %>
+</tbody>
+</table>
