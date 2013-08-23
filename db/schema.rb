@@ -11,7 +11,59 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109015309) do
+ActiveRecord::Schema.define(:version => 20130821130747) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.text     "text"
+    t.text     "short_text"
+    t.text     "help_text"
+    t.integer  "weight"
+    t.string   "response_class"
+    t.string   "reference_identifier"
+    t.string   "data_export_identifier"
+    t.string   "common_namespace"
+    t.string   "common_identifier"
+    t.integer  "display_order"
+    t.boolean  "is_exclusive"
+    t.integer  "display_length"
+    t.string   "custom_class"
+    t.string   "custom_renderer"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "default_value"
+    t.string   "api_id"
+    t.string   "display_type"
+    t.string   "input_mask"
+    t.string   "input_mask_placeholder"
+  end
+
+  add_index "answers", ["api_id"], :name => "uq_answers_api_id", :unique => true
+
+  create_table "dependencies", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "question_group_id"
+    t.string   "rule"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "dependency_conditions", :force => true do |t|
+    t.integer  "dependency_id"
+    t.string   "rule_key"
+    t.integer  "question_id"
+    t.string   "operator"
+    t.integer  "answer_id"
+    t.datetime "datetime_value"
+    t.integer  "integer_value"
+    t.float    "float_value"
+    t.string   "unit"
+    t.text     "text_value"
+    t.string   "string_value"
+    t.string   "response_other"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "fighters", :force => true do |t|
     t.string   "name"
@@ -30,13 +82,142 @@ ActiveRecord::Schema.define(:version => 20130109015309) do
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
+  create_table "picks", :force => true do |t|
+    t.integer  "ufc"
+    t.integer  "user_id"
+    t.integer  "fighter_id"
+    t.integer  "round_id"
+    t.integer  "how_id"
+    t.integer  "fighter_id1"
+    t.integer  "round_id1"
+    t.integer  "how_id1"
+    t.integer  "fighter_id2"
+    t.integer  "round_id2"
+    t.integer  "how_id2"
+    t.integer  "fighter_id3"
+    t.integer  "round_id3"
+    t.integer  "how_id3"
+    t.integer  "fighter_id4"
+    t.integer  "round_id4"
+    t.integer  "how_id4"
+    t.integer  "fighter_id5"
+    t.integer  "round_id5"
+    t.integer  "how_id5"
+    t.integer  "fighter_id6"
+    t.integer  "round_id6"
+    t.integer  "how_id6"
+    t.integer  "fighter_id7"
+    t.integer  "round_id7"
+    t.integer  "how_id7"
+    t.integer  "fighter_id8"
+    t.integer  "round_id8"
+    t.integer  "how_id8"
+    t.integer  "fighter_id9"
+    t.integer  "round_id9"
+    t.integer  "how_id9"
+    t.integer  "fighter_id10"
+    t.integer  "round_id10"
+    t.integer  "how_id10"
+    t.integer  "fighter_id11"
+    t.integer  "round_id11"
+    t.integer  "how_id11"
+    t.integer  "fighter_id12"
+    t.integer  "round_id12"
+    t.integer  "how_id12"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "predictions", :force => true do |t|
     t.integer  "ufc"
     t.integer  "user_id"
     t.integer  "fighter_id"
     t.integer  "round_id"
     t.integer  "how_id"
-    t.integer  "points"
+    t.integer  "fighter_id1"
+    t.integer  "round_id1"
+    t.integer  "how_id1"
+    t.integer  "fighter_id2"
+    t.integer  "round_id2"
+    t.integer  "how_id2"
+    t.integer  "fighter_id3"
+    t.integer  "round_id3"
+    t.integer  "how_id3"
+    t.integer  "fighter_id4"
+    t.integer  "round_id4"
+    t.integer  "how_id4"
+    t.integer  "fighter_id5"
+    t.integer  "round_id5"
+    t.integer  "how_id5"
+    t.integer  "fighter_id6"
+    t.integer  "round_id6"
+    t.integer  "how_id6"
+    t.integer  "fighter_id7"
+    t.integer  "round_id7"
+    t.integer  "how_id7"
+    t.integer  "fighter_id8"
+    t.integer  "round_id8"
+    t.integer  "how_id8"
+    t.integer  "fighter_id9"
+    t.integer  "round_id9"
+    t.integer  "how_id9"
+    t.integer  "fighter_id10"
+    t.integer  "round_id10"
+    t.integer  "how_id10"
+    t.integer  "fighter_id11"
+    t.integer  "round_id11"
+    t.integer  "how_id11"
+    t.integer  "fighter_id12"
+    t.integer  "round_id12"
+    t.integer  "how_id12"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "question_groups", :force => true do |t|
+    t.text     "text"
+    t.text     "help_text"
+    t.string   "reference_identifier"
+    t.string   "data_export_identifier"
+    t.string   "common_namespace"
+    t.string   "common_identifier"
+    t.string   "display_type"
+    t.string   "custom_class"
+    t.string   "custom_renderer"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "api_id"
+  end
+
+  add_index "question_groups", ["api_id"], :name => "uq_question_groups_api_id", :unique => true
+
+  create_table "questions", :force => true do |t|
+    t.integer  "survey_section_id"
+    t.integer  "question_group_id"
+    t.text     "text"
+    t.text     "short_text"
+    t.text     "help_text"
+    t.string   "pick"
+    t.string   "reference_identifier"
+    t.string   "data_export_identifier"
+    t.string   "common_namespace"
+    t.string   "common_identifier"
+    t.integer  "display_order"
+    t.string   "display_type"
+    t.boolean  "is_mandatory"
+    t.integer  "display_width"
+    t.string   "custom_class"
+    t.string   "custom_renderer"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "correct_answer_id"
+    t.string   "api_id"
+  end
+
+  add_index "questions", ["api_id"], :name => "uq_questions_api_id", :unique => true
+
+  create_table "quizzes", :force => true do |t|
+    t.string   "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -52,6 +233,85 @@ ActiveRecord::Schema.define(:version => 20130109015309) do
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
+  create_table "response_sets", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "survey_id"
+    t.string   "access_code"
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "api_id"
+  end
+
+  add_index "response_sets", ["access_code"], :name => "response_sets_ac_idx", :unique => true
+  add_index "response_sets", ["api_id"], :name => "uq_response_sets_api_id", :unique => true
+
+  create_table "responses", :force => true do |t|
+    t.integer  "response_set_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "datetime_value"
+    t.integer  "integer_value"
+    t.float    "float_value"
+    t.string   "unit"
+    t.text     "text_value"
+    t.string   "string_value"
+    t.string   "response_other"
+    t.string   "response_group"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "survey_section_id"
+    t.string   "api_id"
+  end
+
+  add_index "responses", ["api_id"], :name => "uq_responses_api_id", :unique => true
+  add_index "responses", ["survey_section_id"], :name => "index_responses_on_survey_section_id"
+
+  create_table "survey_sections", :force => true do |t|
+    t.integer  "survey_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "reference_identifier"
+    t.string   "data_export_identifier"
+    t.string   "common_namespace"
+    t.string   "common_identifier"
+    t.integer  "display_order"
+    t.string   "custom_class"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "survey_translations", :force => true do |t|
+    t.integer  "survey_id"
+    t.string   "locale"
+    t.text     "translation"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "access_code"
+    t.string   "reference_identifier"
+    t.string   "data_export_identifier"
+    t.string   "common_namespace"
+    t.string   "common_identifier"
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.string   "css_url"
+    t.string   "custom_class"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.integer  "display_order"
+    t.string   "api_id"
+    t.integer  "survey_version",         :default => 0
+  end
+
+  add_index "surveys", ["access_code", "survey_version"], :name => "surveys_access_code_version_idx", :unique => true
+  add_index "surveys", ["api_id"], :name => "uq_surveys_api_id", :unique => true
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -64,5 +324,31 @@ ActiveRecord::Schema.define(:version => 20130109015309) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "validation_conditions", :force => true do |t|
+    t.integer  "validation_id"
+    t.string   "rule_key"
+    t.string   "operator"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "datetime_value"
+    t.integer  "integer_value"
+    t.float    "float_value"
+    t.string   "unit"
+    t.text     "text_value"
+    t.string   "string_value"
+    t.string   "response_other"
+    t.string   "regexp"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "validations", :force => true do |t|
+    t.integer  "answer_id"
+    t.string   "rule"
+    t.string   "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

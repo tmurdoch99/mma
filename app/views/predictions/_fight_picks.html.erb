@@ -8,8 +8,8 @@
 
   <% fighters.each do |fighter| %>
     <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
-    <%= check_box_tag(:fighter_id, fighter.id) %>
-    <%= f.label(:fighter_id, "To win") %>
+    <%= f.radio_button(:fighter_id, fighter.id) %>
+    <%= f.label(:fighter_id, fighter.name) %>
 	
   <% end %>
 </div>	  
@@ -36,8 +36,6 @@
 	  <%= f.radio_button(:how_id, "3") %>
       <%= f.label(:how_id, "Decision") %>
 </div>
-</div> <!-- new fight --> 
-
 
 <% fighters = Fighter.where(:fight => [2]) %>
 <div class="new_fight">
@@ -48,8 +46,8 @@
 
   <% fighters.each do |fighter| %>
     <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
-    <%= f.radio_button(:fighter_id, fighter.id) %>
-    <%= f.label(:fighter_id, "To win") %>
+    <%= f.radio_button(:fighter_id2, fighter.id) %>
+    <%= f.label(:fighter_id2, fighter.name) %>
 	
   <% end %>
 </div>	  
@@ -58,24 +56,339 @@
 <div class="controls form-inline">
 <h4>What round will the fight end?</h4>
 
-	 <%= f.radio_button(:round_id, "1") %>
-      <%= f.label(:round_id, "Round 1") %>
-	  <%= f.radio_button(:round_id, "2") %>
-      <%= f.label(:round_id, "Round 2") %>
-	  <%= f.radio_button(:round_id, "3") %>
-      <%= f.label(:round_id, "Round 3") %>
+	 <%= f.radio_button(:round_id2, "1") %>
+      <%= f.label(:round_id2, "Round 1") %>
+	  <%= f.radio_button(:round_id2, "2") %>
+      <%= f.label(:round_id2, "Round 2") %>
+	  <%= f.radio_button(:round_id2, "3") %>
+      <%= f.label(:round_id2, "Round 3") %>
 </div>
 
 
 <div class="controls form-inline">
 <h4>How will the fight end?</h4>
-	 <%= f.radio_button(:how_id, "1") %>
-      <%= f.label(:how_id, "TKO ") %>
-	  <%= f.radio_button(:how_id, "2") %>
-      <%= f.label(:how_id, "Submission") %>
-	  <%= f.radio_button(:how_id, "3") %>
-      <%= f.label(:how_id, "Decision") %>
+	 <%= f.radio_button(:how_id2, "1") %>
+      <%= f.label(:how_id2, "TKO ") %>
+	  <%= f.radio_button(:how_id2, "2") %>
+      <%= f.label(:how_id2, "Submission") %>
+	  <%= f.radio_button(:how_id2, "3") %>
+      <%= f.label(:how_id2, "Decision") %>
 </div>
-</div> <!-- new fight --> 
-    <%= f.submit "Submit my predictions", class: "btn btn-large btn-primary" %>
-    <% end %>
+
+
+
+
+
+
+<% fighters = Fighter.where(:fight => [3]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id3, fighter.id) %>
+    <%= f.label(:fighter_id1, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id3, "1") %>
+      <%= f.label(:round_id3, "Round 1") %>
+	  <%= f.radio_button(:round_id3, "2") %>
+      <%= f.label(:round_id3, "Round 2") %>
+	  <%= f.radio_button(:round_id3, "3") %>
+      <%= f.label(:round_id3, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id3, "1") %>
+      <%= f.label(:how_id3, "TKO ") %>
+	  <%= f.radio_button(:how_id3, "2") %>
+      <%= f.label(:how_id3, "Submission") %>
+	  <%= f.radio_button(:how_id3, "3") %>
+      <%= f.label(:how_id3, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [4]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id4, fighter.id) %>
+    <%= f.label(:fighter_id4, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id4, "1") %>
+      <%= f.label(:round_id4, "Round 1") %>
+	  <%= f.radio_button(:round_id4, "2") %>
+      <%= f.label(:round_id4, "Round 2") %>
+	  <%= f.radio_button(:round_id4, "3") %>
+      <%= f.label(:round_id4, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id4, "1") %>
+      <%= f.label(:how_id4, "TKO ") %>
+	  <%= f.radio_button(:how_id4, "2") %>
+      <%= f.label(:how_id4, "Submission") %>
+	  <%= f.radio_button(:how_id4, "3") %>
+      <%= f.label(:how_id4, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [5]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id5, fighter.id) %>
+    <%= f.label(:fighter_id5, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id5, "1") %>
+      <%= f.label(:round_id5, "Round 1") %>
+	  <%= f.radio_button(:round_id5, "2") %>
+      <%= f.label(:round_id5, "Round 2") %>
+	  <%= f.radio_button(:round_id5, "3") %>
+      <%= f.label(:round_id5, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id5, "1") %>
+      <%= f.label(:how_id5, "TKO ") %>
+	  <%= f.radio_button(:how_id5, "2") %>
+      <%= f.label(:how_id5, "Submission") %>
+	  <%= f.radio_button(:how_id5, "3") %>
+      <%= f.label(:how_id5, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [6]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id6, fighter.id) %>
+    <%= f.label(:fighter_id6, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id6, "1") %>
+      <%= f.label(:round_id6, "Round 1") %>
+	  <%= f.radio_button(:round_id6, "2") %>
+      <%= f.label(:round_id6, "Round 2") %>
+	  <%= f.radio_button(:round_id6, "3") %>
+      <%= f.label(:round_id6, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id6, "1") %>
+      <%= f.label(:how_id6, "TKO ") %>
+	  <%= f.radio_button(:how_id6, "2") %>
+      <%= f.label(:how_id6, "Submission") %>
+	  <%= f.radio_button(:how_id6, "3") %>
+      <%= f.label(:how_id6, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [7]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id7, fighter.id) %>
+    <%= f.label(:fighter_id5, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id7, "1") %>
+      <%= f.label(:round_id7, "Round 1") %>
+	  <%= f.radio_button(:round_id7, "2") %>
+      <%= f.label(:round_id7, "Round 2") %>
+	  <%= f.radio_button(:round_id7, "3") %>
+      <%= f.label(:round_id7, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id7, "1") %>
+      <%= f.label(:how_id7, "TKO ") %>
+	  <%= f.radio_button(:how_id7, "2") %>
+      <%= f.label(:how_id7, "Submission") %>
+	  <%= f.radio_button(:how_id7, "3") %>
+      <%= f.label(:how_id7, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [8]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id8, fighter.id) %>
+    <%= f.label(:fighter_id8, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id8, "1") %>
+      <%= f.label(:round_id8, "Round 1") %>
+	  <%= f.radio_button(:round_id8, "2") %>
+      <%= f.label(:round_id8, "Round 2") %>
+	  <%= f.radio_button(:round_id8, "3") %>
+      <%= f.label(:round_id8, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id8, "1") %>
+      <%= f.label(:how_id8, "TKO ") %>
+	  <%= f.radio_button(:how_id8, "2") %>
+      <%= f.label(:how_id8, "Submission") %>
+	  <%= f.radio_button(:how_id8, "3") %>
+      <%= f.label(:how_id8, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [9]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id9, fighter.id) %>
+    <%= f.label(:fighter_id9, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id9, "1") %>
+      <%= f.label(:round_id9, "Round 1") %>
+	  <%= f.radio_button(:round_id9, "2") %>
+      <%= f.label(:round_id9, "Round 2") %>
+	  <%= f.radio_button(:round_id9, "3") %>
+      <%= f.label(:round_id9, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id9, "1") %>
+      <%= f.label(:how_id9, "TKO ") %>
+	  <%= f.radio_button(:how_id9, "2") %>
+      <%= f.label(:how_id9, "Submission") %>
+	  <%= f.radio_button(:how_id9, "3") %>
+      <%= f.label(:how_id9, "Decision") %>
+</div>
+
+<% fighters = Fighter.where(:fight => [10]) %>
+<div class="new_fight">
+
+<div class="controls form-inline">
+  <h3>Who will win the fight?</h3>
+  
+
+  <% fighters.each do |fighter| %>
+    <%=  image_tag(fighter.picture.url, alt: fighter.name, width: "150px") %>
+    <%= f.radio_button(:fighter_id10, fighter.id) %>
+    <%= f.label(:fighter_id10, fighter.name) %>
+	
+  <% end %>
+</div>	  
+
+
+<div class="controls form-inline">
+<h4>What round will the fight end?</h4>
+
+	 <%= f.radio_button(:round_id10, "1") %>
+      <%= f.label(:round_id10, "Round 1") %>
+	  <%= f.radio_button(:round_id10, "2") %>
+      <%= f.label(:round_id10, "Round 2") %>
+	  <%= f.radio_button(:round_id10, "3") %>
+      <%= f.label(:round_id10, "Round 3") %>
+</div>
+
+
+<div class="controls form-inline">
+<h4>How will the fight end?</h4>
+	 <%= f.radio_button(:how_id10, "1") %>
+      <%= f.label(:how_id10, "TKO ") %>
+	  <%= f.radio_button(:how_id10, "2") %>
+      <%= f.label(:how_id10, "Submission") %>
+	  <%= f.radio_button(:how_id10, "3") %>
+      <%= f.label(:how_id10, "Decision") %>
+</div>
+
+<%= f.submit "Add Predictions" , class: "btn btn-large btn-primary" %>
+<% end %>
+
+
+</div>
+
+	
+  

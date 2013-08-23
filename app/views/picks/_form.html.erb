@@ -1,0 +1,181 @@
+<%= form_for(@pick) do |f| %>
+  <% if @pick.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pick.errors.count, "error") %> prohibited this pick from being saved:</h2>
+
+      <ul>
+      <% @pick.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ufc %><br />
+    <%= f.number_field :ufc %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id %><br />
+    <%= f.number_field :fighter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id %><br />
+    <%= f.number_field :round_id %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field : %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id1 %><br />
+    <%= f.number_field :fighter_id1 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id1 %><br />
+    <%= f.number_field :round_id1 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id1 %><br />
+    <%= f.number_field :how_id1 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id2 %><br />
+    <%= f.number_field :fighter_id2 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id2 %><br />
+    <%= f.number_field :round_id2 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id2 %><br />
+    <%= f.number_field :how_id2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id3 %><br />
+    <%= f.number_field :fighter_id3 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id3 %><br />
+    <%= f.number_field :round_id3 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id3 %><br />
+    <%= f.number_field :how_id3 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id4 %><br />
+    <%= f.number_field :fighter_id4 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id4 %><br />
+    <%= f.number_field :round_id4 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id4 %><br />
+    <%= f.number_field :how_id4 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id5 %><br />
+    <%= f.number_field :fighter_id5 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id5 %><br />
+    <%= f.number_field :round_id5 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id5 %><br />
+    <%= f.number_field :how_id5 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id6 %><br />
+    <%= f.number_field :fighter_id6 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id6 %><br />
+    <%= f.number_field :round_id6 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id6 %><br />
+    <%= f.number_field :how_id6 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id7 %><br />
+    <%= f.number_field :fighter_id7 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id7 %><br />
+    <%= f.number_field :round_id7 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id7 %><br />
+    <%= f.number_field :how_id7 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id8 %><br />
+    <%= f.number_field :fighter_id8 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id8 %><br />
+    <%= f.number_field :round_id8 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id8 %><br />
+    <%= f.number_field :how_id8 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id9 %><br />
+    <%= f.number_field :fighter_id9 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id9 %><br />
+    <%= f.number_field :round_id9 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id9 %><br />
+    <%= f.number_field :how_id9 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id10 %><br />
+    <%= f.number_field :fighter_id10 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id10 %><br />
+    <%= f.number_field :round_id10 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id10 %><br />
+    <%= f.number_field :how_id10 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id11 %><br />
+    <%= f.number_field :fighter_id11 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id11 %><br />
+    <%= f.number_field :round_id11 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id11 %><br />
+    <%= f.number_field :how_id11 %>
+  </div>
+  <div class="field">
+    <%= f.label :fighter_id12 %><br />
+    <%= f.number_field :fighter_id12 %>
+  </div>
+  <div class="field">
+    <%= f.label :round_id12 %><br />
+    <%= f.number_field :round_id12 %>
+  </div>
+  <div class="field">
+    <%= f.label :how_id12 %><br />
+    <%= f.number_field :how_id12 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,103 @@
+<h1>Listing picks</h1>
+
+<table>
+  <tr>
+    <th>Ufc</th>
+    <th>User</th>
+    <th>Fighter</th>
+    <th>Round</th>
+    <th></th>
+    <th>Fighter id1</th>
+    <th>Round id1</th>
+    <th>How id1</th>
+    <th>Fighter id2</th>
+    <th>Round id2</th>
+    <th>How id2</th>
+    <th>Fighter id3</th>
+    <th>Round id3</th>
+    <th>How id3</th>
+    <th>Fighter id4</th>
+    <th>Round id4</th>
+    <th>How id4</th>
+    <th>Fighter id5</th>
+    <th>Round id5</th>
+    <th>How id5</th>
+    <th>Fighter id6</th>
+    <th>Round id6</th>
+    <th>How id6</th>
+    <th>Fighter id7</th>
+    <th>Round id7</th>
+    <th>How id7</th>
+    <th>Fighter id8</th>
+    <th>Round id8</th>
+    <th>How id8</th>
+    <th>Fighter id9</th>
+    <th>Round id9</th>
+    <th>How id9</th>
+    <th>Fighter id10</th>
+    <th>Round id10</th>
+    <th>How id10</th>
+    <th>Fighter id11</th>
+    <th>Round id11</th>
+    <th>How id11</th>
+    <th>Fighter id12</th>
+    <th>Round id12</th>
+    <th>How id12</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @picks.each do |pick| %>
+  <tr>
+    <td><%= pick.ufc %></td>
+    <td><%= pick.user_id %></td>
+    <td><%= pick.fighter_id %></td>
+    <td><%= pick.round_id %></td>
+    <td><%= pick. %></td>
+    <td><%= pick.fighter_id1 %></td>
+    <td><%= pick.round_id1 %></td>
+    <td><%= pick.how_id1 %></td>
+    <td><%= pick.fighter_id2 %></td>
+    <td><%= pick.round_id2 %></td>
+    <td><%= pick.how_id2 %></td>
+    <td><%= pick.fighter_id3 %></td>
+    <td><%= pick.round_id3 %></td>
+    <td><%= pick.how_id3 %></td>
+    <td><%= pick.fighter_id4 %></td>
+    <td><%= pick.round_id4 %></td>
+    <td><%= pick.how_id4 %></td>
+    <td><%= pick.fighter_id5 %></td>
+    <td><%= pick.round_id5 %></td>
+    <td><%= pick.how_id5 %></td>
+    <td><%= pick.fighter_id6 %></td>
+    <td><%= pick.round_id6 %></td>
+    <td><%= pick.how_id6 %></td>
+    <td><%= pick.fighter_id7 %></td>
+    <td><%= pick.round_id7 %></td>
+    <td><%= pick.how_id7 %></td>
+    <td><%= pick.fighter_id8 %></td>
+    <td><%= pick.round_id8 %></td>
+    <td><%= pick.how_id8 %></td>
+    <td><%= pick.fighter_id9 %></td>
+    <td><%= pick.round_id9 %></td>
+    <td><%= pick.how_id9 %></td>
+    <td><%= pick.fighter_id10 %></td>
+    <td><%= pick.round_id10 %></td>
+    <td><%= pick.how_id10 %></td>
+    <td><%= pick.fighter_id11 %></td>
+    <td><%= pick.round_id11 %></td>
+    <td><%= pick.how_id11 %></td>
+    <td><%= pick.fighter_id12 %></td>
+    <td><%= pick.round_id12 %></td>
+    <td><%= pick.how_id12 %></td>
+    <td><%= link_to 'Show', pick %></td>
+    <td><%= link_to 'Edit', edit_pick_path(pick) %></td>
+    <td><%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pick', new_pick_path %>

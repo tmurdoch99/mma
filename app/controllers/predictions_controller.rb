@@ -13,6 +13,7 @@ def new
 def show
     
     @prediction = current_user.predictions(params[:prediction])
+	
   end
   
   def correct_user
@@ -23,7 +24,7 @@ def show
  
  def create
     
-    @prediction = current_user.predictions.build(params [:prediction])
+    @prediction = current_user.predictions.build(params[:prediction])
     if @prediction.save
       flash[:success] = "Your Predictions have been saved!"
       redirect_to @prediction

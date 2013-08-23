@@ -3,7 +3,7 @@ class Fighter < ActiveRecord::Base
   
   attr_accessible :name, :picture, :fight
   
-  belongs_to :predictions
-  belongs_to :users
-  accepts_nested_attributes_for :predictions
+  belongs_to :prediction
+  belongs_to :user
+  accepts_nested_attributes_for :prediction
 end
