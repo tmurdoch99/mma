@@ -4,8 +4,8 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
-    end
-	 @prediction = current_user.predictions(params[:prediction])
+     @ufc167 = current_user.predictions(params[:ufc ] ||167)
+  end
   end
   
   def help

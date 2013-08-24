@@ -9,7 +9,9 @@ def new
 @ufc = '155'
  @prediction = Prediction.where("ufc = '155'").order('points desc')
  end
-
+def edit
+    @prediction = Prediction.find(params[:id])
+  end
 def show
     
     @prediction = current_user.predictions(params[:prediction])

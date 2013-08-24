@@ -5,15 +5,18 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
-        <%=  %>
+	  <% if current_user == @ufc167 %>
+        <%=  link_to "ufc 167 picks", show_path %> 
+		 <% end %>
       </section>
+	  
       <section>
-        <%=  %>
+       
       </section>
     </aside>
     <section>
         <%= render(:partial => 'ufc_preview') unless Prediction.blank? %>
-		  <%= render(:partial => 'predictions/picks') if Prediction.where("ufc = '167'") %>
+		 
 		
         
 		</section>
